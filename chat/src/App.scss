@@ -1,0 +1,177 @@
+//font
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
+
+*{
+    transition: all .3s;
+}
+
+html{
+    font-size: 62.5%; //10px == 1rem
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(130deg, rgb(244,70,133) 30%, rgb(69,88,113) 10%) ;
+    background-repeat: no-repeat;
+}
+
+.messages-container{
+    width: 75vw;
+    height: 75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.521);
+    background-color: white;
+
+    &__content{
+        height: 80%;
+        overflow: auto;
+        padding: 1rem;
+    }
+    &__post{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 10%;
+        background-color: rgb(221, 221, 221);
+
+        
+        span{
+            width: 7%;
+            height:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            color: rgb(194, 194, 194);            
+        }
+
+        input{
+            width: 8%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            font-size: 3rem;
+            text-transform: capitalize;
+            color: rgb(236, 27, 104);
+
+            &::placeholder{
+                font-size: 1.5rem;
+            }
+
+        }
+
+        textarea{
+            width: 65%;
+            height:50%;
+            border: none;
+            outline: none;
+            font-size: 3rem;
+            padding: 2rem;
+            color: rgb(31, 31, 31);
+            background-color: transparent;
+
+            &::placeholder{
+                text-align: center;
+            }
+        }
+
+        button{
+            width: 20%;
+            display: flex;
+            outline: none;
+            justify-content: center;
+            align-items: center;
+            height:100%;
+            cursor: pointer;
+            font-size: 5rem;
+            background-color:rgb(141, 55, 253) ;
+            color:white;
+            border:none;
+            border-radius:  12rem 0 0 0 ;
+
+            &:hover{
+                background-color:rgb(123, 32, 241) ;
+            }
+            &:hover svg{
+                transform: scale(1.08);
+            }
+        }
+    }
+}
+
+//user
+.messageUser{
+    font-size: 2.5rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: .2rem;
+    color: rgb(31, 31, 31);
+    margin-right: .5rem;
+    background-color:wheat;
+    box-shadow: 0 .1rem .5rem rgba(0, 0, 0, 0.137);
+    text-transform: uppercase;
+}
+
+//user message
+.messages-content{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+
+    &__text{
+        display: flex;
+        align-items: center;
+        border-radius: 2rem 0 2rem 2rem ;
+        padding:1rem;
+        height: 3rem;
+        width:50%;
+        text-shadow: 0 .1rem .1rem rgba(0, 0, 0, 0.418);
+        font-weight: bold;
+        font-size: 1.8rem;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+//scroll design
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(244,70,133); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(244,70,133); 
+
+}
