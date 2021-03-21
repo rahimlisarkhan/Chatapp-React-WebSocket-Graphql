@@ -1,34 +1,76 @@
 //font
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
 
+
+//mixins
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content }  //600px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content }  //900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content }   //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content }   //1800px
+    }
+};
+
+
+
+//Sasscode
+
 *{
     transition: all .3s;
 }
 
 html{
     font-size: 62.5%; //10px == 1rem
+ 
+
 }
 
 body{
-    display: flex;
-    height: 100vh;
     font-family: 'Roboto', sans-serif;
-    justify-content: center;
-    align-items: center;
     background-image:linear-gradient(130deg, rgb(244,70,133) 30%, rgb(69,88,113) 10%) ;
-    background-repeat: no-repeat;
+    background-size: 120% 120%;
 }
 
 .messages-container{
-    width: 75vw;
-    height: 75rem;
+    width: 60%;
+    height: 85rem;
+    margin:  0 auto;
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 3rem;
     border-radius: 2rem;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.521);
     background-color: white;
+
+    @include respond(phone){
+        width: 80%;
+        height: 73rem;
+    }
+
+    &__header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 6rem;
+        padding-bottom: 1rem;
+        color: rgba(180, 180, 180, 0.589);
+        border-bottom: .1rem solid rgba(160, 160, 160, 0.452);
+        text-transform: lowercase;
+        letter-spacing: .8rem;
+
+        @include respond(phone){
+            font-size: 2.5rem;
+             letter-spacing: .3rem;
+        }
+    }
 
     &__content{
         height: 80%;
@@ -50,7 +92,11 @@ body{
             justify-content: center;
             align-items: center;
             font-size: 4rem;
-            color: rgb(194, 194, 194);            
+            color: rgb(194, 194, 194);
+            
+            @include respond(phone){
+                font-size: 2rem;
+                }
         }
 
         input{
@@ -62,6 +108,11 @@ body{
             font-size: 3rem;
             text-transform: capitalize;
             color: rgb(236, 27, 104);
+
+            @include respond(phone){
+            font-size: 1.7rem;
+            width: 15%;
+            }
 
             &::placeholder{
                 font-size: 1.5rem;
@@ -78,6 +129,11 @@ body{
             padding: 2rem;
             color: rgb(31, 31, 31);
             background-color: transparent;
+
+            @include respond(phone){
+                font-size: 2rem;
+                width: 50%;
+                }
 
             &::placeholder{
                 text-align: center;
@@ -97,6 +153,12 @@ body{
             color:white;
             border:none;
             border-radius:  12rem 0 0 0 ;
+            
+            @include respond(phone){
+                font-size: 3rem;
+                padding: .5rem;
+                width: 15%;
+                }
 
             &:hover{
                 background-color:rgb(123, 32, 241) ;
@@ -123,6 +185,12 @@ body{
     background-color:wheat;
     box-shadow: 0 .1rem .5rem rgba(0, 0, 0, 0.137);
     text-transform: uppercase;
+
+    @include respond(phone){
+        width: 4rem;
+         height: 4rem;
+         font-size: 1.6rem;
+    }
 }
 
 //user message
@@ -130,17 +198,24 @@ body{
     display: flex;
     align-items: center;
     margin: 1rem 0;
+    width: 100%;
 
     &__text{
         display: flex;
         align-items: center;
         border-radius: 2rem 0 2rem 2rem ;
-        padding:1rem;
-        height: 3rem;
+        padding:1.5rem;
         width:50%;
+        height: auto;
         text-shadow: 0 .1rem .1rem rgba(0, 0, 0, 0.418);
         font-weight: bold;
         font-size: 1.8rem;
+        
+
+        @include respond(phone){
+            width:60%;
+            font-size: 1.6rem;
+            }
     }
     
 }
